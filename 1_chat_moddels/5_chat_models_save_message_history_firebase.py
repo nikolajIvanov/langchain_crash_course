@@ -16,12 +16,39 @@ from firebase_admin import credentials, firestore
 import datetime
 import json
 import os
+import pathlib
 
 # Firebase-Initialisierung
 if not firebase_admin._apps:
-    # Lokale Anmeldedaten verwenden, falls vorhanden
-    # Alternativ können Dienstkonto-Anmeldedaten über eine JSON-Datei eingebunden werden
-    cred = credentials.ApplicationDefault()
+    # Pfad zur Firebase-Credentials-Datei
+    creds_paths = [
+        './secrets/firebase-credentials.json',
+        './secrets/firebase-adminsdk.json',
+        '/app/secrets/firebase-credentials.json',
+        '/app/secrets/firebase-adminsdk.json'
+    ]
+    
+    cred = None
+    
+    # Versuche verschiedene mögliche Pfade für die Credentials-Datei
+    for path in creds_paths:
+        if os.path.exists(path):
+            print(f"Firebase-Credentials gefunden unter: {path}")
+            cred = credentials.Certificate(path)
+            break
+            
+    # Fallback auf ApplicationDefault, falls keine Datei gefunden wurde
+    if cred is None:
+        print("Keine Credentials-Datei gefunden, verwende ApplicationDefault")
+        try:
+            cred = credentials.ApplicationDefault()
+        except Exception as e:
+            print(f"Fehler bei der Authentifizierung: {e}")
+            print("Hinweis: Du musst eine firebase-credentials.json im secrets/-Verzeichnis ablegen")
+            print("Diese kannst du in der Firebase Console unter Projekteinstellungen > Dienstkonten > Firebase Admin SDK erzeugen.")
+            exit(1)
+    
+    # Firebase-App initialisieren
     firebase_admin.initialize_app(cred, {
         'projectId': os.environ.get('FIREBASE_PROJECT_ID', 'langchaintutorial-92b5b'),
     })
