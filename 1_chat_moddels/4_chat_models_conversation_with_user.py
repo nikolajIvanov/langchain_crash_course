@@ -22,6 +22,13 @@ while True:
     if user_input.lower() == "exit":
         break
     chat_history.append(HumanMessage(content=user_input))
+    """
+    Hier wird das aktuelle Chat-Verlauf an das Modell übergeben und die Antwort generiert.
+    Die Antwort wird der Chat-History hinzugefügt und auf der Konsole ausgegeben.
+    """
     result = llm.invoke(chat_history)
     chat_history.append(result)
     print(result.content)
+
+print("---- Message History ----")
+print(chat_history)
