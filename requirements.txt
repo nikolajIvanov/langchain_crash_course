@@ -1,8 +1,8 @@
 langchain
 openai
-python-dotenv
 langchain-openai
 langchain-mistralai
 langchain-anthropic
 anthropic
 mistralai
+firebase-admin
