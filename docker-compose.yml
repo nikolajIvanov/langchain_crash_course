@@ -1,0 +1,11 @@
+services:
+  app: # Definiert einen Service namens 'app'
+    build:
+      context: . # Gibt an, dass das Build-Kontext das aktuelle Verzeichnis ist (wo die Dockerfile liegt)
+    image: langchain_course # Optional: Gibt dem gebauten Image einen Namen
+    env_file:
+      - .env # Lädt Umgebungsvariablen aus der .env-Datei (entspricht --env-file)
+    volumes:
+      - .:/app # Bind Mount: Mountet das aktuelle Host-Verzeichnis (.) in das /app-Verzeichnis im Container
+    # Das ENTRYPOINT ["python"] und CMD ["main.py"] aus der Dockerfile werden standardmäßig übernommen.
+    # Für docker-compose run werden diese jedoch oft überschrieben (siehe README). 
