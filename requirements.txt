@@ -7,3 +7,6 @@ anthropic
 mistralai
 firebase-admin
 langchain-core
+chromadb
+langchain-chroma
+langchain-community
