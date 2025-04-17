@@ -33,4 +33,4 @@ result = chain.invoke({"topic": "LLMOps", "number": 3})
 
 print(result)
 
-# docker-compose run --rm app 3_chains/1_chains_basics.py
+# docker-compose run --rm app langchain/3_chains/1_chains_basics.py

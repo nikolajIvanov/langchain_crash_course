@@ -13,3 +13,5 @@ messages = [
 restult = llm.invoke(messages)
 
 print(restult.content)
+
+# docker-compose run --rm app langchain/1_chat_moddels/2_chat_models_conversation.py

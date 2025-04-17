@@ -81,4 +81,4 @@ result = model.invoke(message)
 print(result.content)
 
 # Befehl zum Ausführen des Skripts in einer Docker-Umgebung
-# docker-compose run --rm app 4_RAGs/3_rag_one_off_question.py
+# docker-compose run --rm app langchain/4_RAGs/3_rag_one_off_question.py

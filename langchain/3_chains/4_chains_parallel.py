@@ -77,4 +77,4 @@ result = chain.invoke({"movie_name": "Inception"})
 # Ausgabe des Ergebnisses (ein einfacher String)
 print(result)
 
-# docker-compose run --rm app 3_chains/4_chains_parallel.py
+# docker-compose run --rm app langchain/3_chains/4_chains_parallel.py 

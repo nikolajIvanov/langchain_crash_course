@@ -29,3 +29,5 @@ prompt = prompt_template.invoke({"topic": "LLMOps", "number": 3})
 result = llm.invoke(prompt)
 
 print(result.content)
+
+# docker-compose run --rm app langchain/2_prompt_templates/1_prompt_templates_starter.py

@@ -215,3 +215,5 @@ while True:
 # --- AUSGABE DER CHAT-HISTORY NACH BEENDIGUNG ---
 print("---- Message History ----")
 print(chat_history)
+
+# docker-compose run --rm app langchain/1_chat_moddels/5_chat_models_save_message_history_firebase.py

@@ -77,4 +77,4 @@ else:
     print("Vector store already exists. No need to initialize.")  # Meldung, wenn Datenbank bereits existiert
 
 # Befehl zum Ausführen des Skripts in einer Docker-Umgebung
-# docker-compose run --rm app 4_RAGs/2a_rag_basics_metadata.py 
+# docker-compose run --rm app langchain/4_RAGs/2a_rag_basics_metadata.py 

@@ -32,3 +32,4 @@ restult_mistral = llm_mistral.invoke(messages)
 
 print(restult_mistral.content)
 
+# docker-compose run --rm app langchain/1_chat_moddels/3_chat_models-alternative_models.py

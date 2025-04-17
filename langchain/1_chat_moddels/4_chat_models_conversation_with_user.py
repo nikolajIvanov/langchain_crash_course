@@ -32,3 +32,5 @@ while True:
 
 print("---- Message History ----")
 print(chat_history)
+
+# docker-compose run --rm app langchain/1_chat_moddels/4_chat_models_conversation_with_user.py
