@@ -11,3 +11,7 @@ chromadb
 langchain-chroma
 langchain-community
 langchainhub
+langchain-google-genai
+duckduckgo-search
+langgraph
+grandalf
